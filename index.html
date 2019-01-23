@@ -83,7 +83,7 @@
 		<header id="header">
 			<script type="text/javascript">
 						page = findGetParameter("page");
-						if( $.inArray(page, ['home']) != -1){
+						if ( $.inArray(page, ['program', 'venue', 'registration', 'call']) == -1){
 						    $("#header").load("includes/header.html")
 						} 
 					</script>
