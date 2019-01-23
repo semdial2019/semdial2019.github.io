@@ -33,6 +33,21 @@
 		<link href="css/style.css" rel="stylesheet">
 
 	</head>
+
+	<script type="text/javascript">
+		function findGetParameter(parameterName) {
+		    var result = null,
+		        tmp = [];
+		    var items = location.search.substr(1).split("&");
+		    for (var index = 0; index < items.length; index++) {
+		        tmp = items[index].split("=");
+		        if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+		    }
+		    return result;
+		}
+	</script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
 	<body>
 		<!-- Navigation -->
 		<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -47,8 +62,7 @@
 				</div>
 				<div id="navbar" class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="?page=home">Home</a></li>
-						<li><a href="?page=home">About</a></li>
+						<li><a href="?page=home" style="padding-top: 0; padding-bottom: 0"><img src="images/logo_fill.png" style="width: 50px; padding: 2px;"> LondonLogue 2019</a></li>
 						<li><a href="?page=registration">Registration</a></li>
 						<li><a href="?page=call">Call for Papers</a></li>
 						<li><a href="?page=program">Program</a></li>
@@ -66,31 +80,22 @@
 		</nav>
 
 		<div class="container">
-		<header>
-			<a href="?page=home"><img src="images/semdial_23_header_4.png"></a>
+		<header id="header">
+			<script type="text/javascript">
+						page = findGetParameter("page");
+						if( $.inArray(page, ['home']) != -1){
+						    $("#header").load("includes/header.html")
+						} 
+					</script>
 		</header>
 		<section>
 			<div class="row">
 				<div class="col-md-8">
-					<script type="text/javascript">
-						function findGetParameter(parameterName) {
-						    var result = null,
-						        tmp = [];
-						    var items = location.search.substr(1).split("&");
-						    for (var index = 0; index < items.length; index++) {
-						        tmp = items[index].split("=");
-						        if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-						    }
-						    return result;
-						}
-					</script>
-
 					<div id="content_loader"></div>
 
-					<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 					<script type="text/javascript">
 						page = findGetParameter("page");
-						if( $.inArray(page, ['home', 'about', 'program', 'venue', 'registration', 'call', 'contact']) != -1){
+						if( $.inArray(page, ['home', 'program', 'venue', 'registration', 'call']) != -1){
 						    $("#content_loader").load("includes/" + page + ".html")
 						} else {
 						    $("#content_loader").load("includes/home.html")
@@ -101,23 +106,23 @@
 				<div class="col-md-4 sidebar-gutter">
 					<aside>
 					<!-- sidebar-widget -->
-					<div class="sidebar-widget">
+					<!-- <div class="sidebar-widget">
 						<h3 class="sidebar-title">About</h3>
 						<div class="widget-container widget-about">
-							<!-- <h4>SemDial</h4>
+							<h4>SemDial</h4>
 							<div class="author-title">Workshop Series</div> -->
-							<p>
+							<!-- <p>
 								The SemDial Workshops aim at bringing together researchers working on the semantics and pragmatics of dialogue in fields such as formal semantics and pragmatics, artificial intelligence, computational linguistics, psychology, and neural science.
 							</p>
 							<p>
 
 								In 2019, the 23rd edition of this workshop series will be hosted by the <a href="http://cogsci.eecs.qmul.ac.uk/" target="_blank">Cognitive Science Group (CogSci)</a> at the <a href="https://www.qmul.ac.uk/" target="_blank">Queen Mary University of London</a>, UK. 
-							</p>
+							</p> -->
 							<!-- <p>
 								We invite submissions on all topics related to the semantics and pragmatics of dialogue. For more information about the scope, topic and format of the workshop please refer to our official <a href="?page=call">Call for papers</a> and our <a href="?page=call">Submission Site</a> for instructions on how to prepare and submit articles for presentation at SemdDial 2019.
 							</p> -->
-						</div>
-					</div>
+						<!-- </div>
+					</div> --> 
 					<!-- sidebar-widget -->
 					<div class="sidebar-widget">
 						<h3 class="sidebar-title">Sponsors</h3>

@@ -128,7 +128,7 @@ section:last-child {
 }
 
 header {
-	margin: 100px 0 45px;
+	margin: 60px 0 0px;
 	text-align: center;
 }
 /*- BX Slaider reset -*/
@@ -192,8 +192,8 @@ header {
 }
 /*- blog post -*/
 .blog-post {
-	padding-bottom: 30px;
-	margin-bottom: 30px;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
 	border-bottom: 1px solid #CECECE;
 }
 .blog-post:last-child {
@@ -211,9 +211,9 @@ header {
 }
 .blog-post .blog-post-body p {
 	text-align: justify;
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: 300;
-	line-height: 30px;
+	line-height: 22px;
 	color: #000;
 }
 .blog-post .blog-post-body a {
@@ -452,7 +452,7 @@ footer .footer-bottom {
 }
 
 #clockdiv > div{
-	padding: 10px;
+	padding: 0px;
 	border-radius: 3px;
 	background: #0d3273;
 	display: inline-block;
