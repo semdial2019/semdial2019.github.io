@@ -66,6 +66,7 @@
 					<ul class="nav navbar-nav">
 						<li><a href="?page=home" style="padding-top: 0; padding-bottom: 0"><img src="images/logo_fill.png" style="width: 50px; padding: 2px;"> LondonLogue 2019</a></li>
 						<li><a href="?page=call">Call for Papers</a></li>
+						<li><a href="?page=dates">Key Dates</a></li>
 						<li><a href="?page=registration">Registration</a></li>
 						<li><a href="?page=program">Program</a></li>
 						<li><a href="?page=venue">Venue</a></li>
@@ -85,7 +86,7 @@
 		<header id="header">
 			<script type="text/javascript">
 						page = findGetParameter("page");
-						if ( $.inArray(page, ['program', 'venue', 'registration', 'call']) == -1){
+						if ( $.inArray(page, ['program', 'venue', 'registration', 'call', 'dates']) == -1){
 						    $("#header").load("includes/header.html")
 						} 
 					</script>
@@ -97,7 +98,7 @@
 
 					<script type="text/javascript">
 						page = findGetParameter("page");
-						if( $.inArray(page, ['home', 'program', 'venue', 'registration', 'call']) != -1){
+						if( $.inArray(page, ['home', 'program', 'venue', 'registration', 'call', 'dates']) != -1){
 						    $("#content_loader").load("includes/" + page + ".html")
 						} else {
 						    $("#content_loader").load("includes/home.html")
@@ -143,6 +144,7 @@
 						<div class="widget-container">
 							<ul>
 								<li><a href="?page=call">Call for Papers</a></li>
+								<li><a href="?page=dates">Key Dates</a></li>
 								<li><a href="?page=registration">Registration</a></li>
 								<li><a href="?page=program">Program</a></li>
 								<li><a href="?page=venue">Venue</a></li>
