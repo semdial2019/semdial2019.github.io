@@ -49,6 +49,21 @@
 		}
 	</script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">
+		var reload = function(){    
+		    //Check if the current URL contains '#'
+		    if(document.URL.indexOf("#")==-1){
+			// Set the URL to whatever it was plus "#".
+			url = document.URL+"#";
+			location = "#";
+
+			//Reload the page
+			location.reload(true);
+			//window.opener.scrollTo(0, 0);
+		    }
+		   window.onload = parent.scrollTo(0,0);    
+		}
+	</script>
 
 	<body>
 		<!-- Navigation -->
